@@ -9,6 +9,8 @@
 
     /* Grid Outlines */
     .grid-box {
+      z-index: 100;
+      pointer-events: none;
       &:not(:first-child) {
         border-left: 1px dashed lightgray;
       }
@@ -24,6 +26,10 @@
         width: 100%;
         object-fit: cover;
         filter: grayscale(100%);
+        transition: 0.8s;
+        &:hover {
+          filter: grayscale(0%);
+        }
         &.grid-1 {
           height: 50vh;
         }
