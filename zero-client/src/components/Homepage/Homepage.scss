@@ -1,0 +1,57 @@
+.homepage {
+  .grid {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 16vw 16vw 20vw 16vw 12vw;
+    grid-column-gap: 5vw;
+
+    /* Grid Outlines */
+    .grid-box {
+      z-index: 100;
+      pointer-events: none;
+      &:not(:first-child) {
+        border-left: 1px dashed lightgray;
+      }
+      &:not(:last-child) {
+        border-right: 1px dashed lightgray;
+      }
+    }
+
+    /* Grid Thumbs */
+    .grid-content {
+      align-self: end;
+      img {
+        width: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: 0.8s;
+        &:hover {
+          filter: grayscale(0%);
+        }
+        &.grid-1 {
+          height: 50vh;
+        }
+        &.grid-2 {
+          height: 40vh;
+        }
+        &.grid-3 {
+          height: 60vh;
+        }
+        &.grid-4 {
+          height: 35vh;
+        }
+      }
+    }
+
+    .menu {
+      transform: rotate(90deg);
+      font-size: 36px;
+      height: 1em;
+      line-height: 1em;
+      margin-top: 100px;
+      margin-right: -30px;
+    }
+  }
+}
